@@ -1,11 +1,14 @@
 import java.util.Arrays;
 
+/**
+* I'm bored, lets play with Arrays
+* */
 public class PermutationDriver {
     public static void main(String[] args) {
-        int[] left = {9};
+        int[] left = new int[0];
         int[] right = {1, 2, 3, 4, 5};
         permutation(left, right, 5); // Find all permutations of length 5
-        //powerset()
+        powerset(left, right); // Print the powerset of right
     }
 
     /**
@@ -43,6 +46,11 @@ public class PermutationDriver {
 
     /**
     * Return a slice of the given array starting with i (inclusive) and ending with j (exclusive)
+    *
+    * @param arr The array to take a slice of
+    * @param i The left index to slice from
+    * @param j The right index to slice to
+    * @return The sub-Array
     */
     public static int[] subArray(int[] arr, int i, int j) {
         if (j - i < 1) {
@@ -57,6 +65,10 @@ public class PermutationDriver {
 
     /**
     * Append one array onto the end of the other
+    *
+    * @param a Left half to be appended to
+    * @param b Right half to append to a
+    * @return The concatenated array
     */
     public static int[] append(int[] a, int[] b) {
         int[] ret = new int[a.length + b.length];
@@ -73,6 +85,10 @@ public class PermutationDriver {
 
     /**
     * Append an int to the end of the array
+    *
+    * @param a Left half to be appended to
+    * @param b integer to append to the end of a
+    * @return the concatenated array
     */
     public static int[] append(int[] a, int b) {
         int[] ret = new int[a.length + 1];
